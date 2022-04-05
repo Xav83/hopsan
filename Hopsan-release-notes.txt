@@ -33,8 +33,13 @@
 2.20.0 (2022-??-??)
 
 ----- Enhancements -----
+
+- HopsanCore
+  - Move real-time simulation main loop into HopsanCore (from GUI) resulting in much better performance (animation mode)
+  - Temporary files created by lookup components are now deleted on Linux systems when the model is closed
+    (On Windows they will remain in the temp directory)
+
 - HopsanGUI
-  - HCOM: Support elseif and nested if-statements
   - Show HTML description in FMIWrapper component (extension library) if available in FMU
   - Replace functionality added to FindWidget for text files
   - Import/export parameter data to/from SSV format
@@ -43,9 +48,12 @@
   - Added "Open model file" option in right-click menu for subsystem components in library widget
   - Hide "Open source code" option for components that have no source code specified
   - Double-clicking on subsystem components opens model file
-  - Move real-time simulation main loop into HopsanCore resulting in much better performance (animation mode)
   - HCOM: Add steady-state identification, function ssi()
   - HCOM: New function: cut()
+  - HCOM: Support elseif and nested if-statements
+  - Make GUI fall back to empty port icon graphics for unknown node types
+    This makes it possibly to register and use custom node types in custom component libraries
+    Note! Custom nodes may not yet work in all cases, such as in code generation
 
 ----- Bug Fixes -----
 
@@ -57,6 +65,7 @@
   - HCOM: Fix symhop evaluation of power if variable contains underscore, ex: a_b^2
   - HCOM: Fix hg() (highest generation) function, it did always return 0
   - Fix crash when adding new component to library
+  - Ensure that error and warning messages about missing files when loading libraries actually contain the missing path
   
 - HopsanCore
   - Fix signal component sorting when a ReadMultiPort with multiple connections is present

@@ -44,7 +44,7 @@
   - Replace functionality added to FindWidget for text files
   - Import/export parameter data to/from SSV format
   - Support SSV parameter sets for components (can be specified in component xml)
-  - Add RMS spectrum to frequency analysis
+  - Add 'Energy Density Spectrum', 'Power Density Spectrum' and 'Root Mean Square' of vector to frequency analysis
   - Added "Open model file" option in right-click menu for subsystem components in library widget
   - Hide "Open source code" option for components that have no source code specified
   - Double-clicking on subsystem components opens model file
@@ -54,6 +54,13 @@
   - Make GUI fall back to empty port icon graphics for unknown node types
     This makes it possibly to register and use custom node types in custom component libraries
     Note! Custom nodes may not yet work in all cases, such as in code generation
+
+- Ops
+  - Support for surrogate models in Ops algorithms
+    Surrogate models are fast numerical approximations of the objective functions.
+    The implementation is based on polynomial response surfaces, as described by: https://doi.org/10.1007/s11081-014-9247-9
+    To active surrogate models, add the command surrogatemodel <interval> in the HCOM script.
+    The interval setting specifies how many evaluations the surrogate model is used before it is updated.
 
 ----- Bug Fixes -----
 

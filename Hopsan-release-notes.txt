@@ -30,7 +30,7 @@
 ******************************
     Version History
 ******************************
-2.20.0 (2022-??-??)
+2.20.0 (2022-07-11)
 
 ----- Enhancements -----
 
@@ -73,6 +73,8 @@
   - HCOM: Fix hg() (highest generation) function, it did always return 0
   - Fix crash when adding new component to library
   - Ensure that error and warning messages about missing files when loading libraries actually contain the missing path
+  - Spectrum/FFT dialog Crashes GUI if simulation was stopped by stop component
+    time data was not truncated to actual number of simulated samples
   
 - HopsanCore
   - Fix signal component sorting when a ReadMultiPort with multiple connections is present
